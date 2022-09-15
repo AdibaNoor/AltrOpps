@@ -72,6 +72,13 @@
             </list>
           </value>
         </entry>
+        <entry key="dots_indicator">
+          <value>
+            <list>
+              <option value="C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/dots_indicator-2.1.0/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="fake_async">
           <value>
             <list>
@@ -111,6 +118,13 @@
           <value>
             <list>
               <option value="C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/image-3.1.3/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="introduction_screen">
+          <value>
+            <list>
+              <option value="C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/introduction_screen-3.0.2/lib" />
             </list>
           </value>
         </entry>
@@ -260,9 +274,11 @@
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/collection-1.15.0/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/crypto-3.0.2/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-1.0.5/lib" />
+      <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/dots_indicator-2.1.0/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/fake_async-1.2.0/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_native_splash-2.1.6/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/image-3.1.3/lib" />
+      <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/introduction_screen-3.0.2/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.3/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/lint-1.9.0/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.11/lib" />

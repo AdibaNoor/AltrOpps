@@ -59,7 +59,7 @@ class OnBoardingPage extends StatelessWidget {
 
   void goToHome(context) =>
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => MyHomePage(title: 'HomePage')),
+        MaterialPageRoute(builder: (_) => MyHomePage()),
       );
 
   Widget buildImage(String path) =>
