@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'HomePage.dart';
+import 'Onboarding_pages.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,9 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         // This is the theme of your application.
 
-        primarySwatch: Colors.amber,
+        backgroundColor: Color(0xFFF6DEC0),
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: OnBoardingPage(),
     );
   }
 }
