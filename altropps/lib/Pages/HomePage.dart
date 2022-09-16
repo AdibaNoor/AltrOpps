@@ -1,5 +1,6 @@
 import 'package:altropps/util/Card_custom.dart';
 import 'package:flutter/material.dart';
+import 'package:google_nav_bar/google_nav_bar.dart';
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
@@ -8,6 +9,34 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int _selectedIndex=0;
+
+  final List<Widget> _pages = [
+    Row(children: [
+      Text('Home',
+        style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
+      Text('Page',
+        style: TextStyle(fontSize: 28, fontWeight: FontWeight.normal),),],
+    ),
+    Row(children: [
+      Text('Fav',
+        style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
+      Text('Page',
+        style: TextStyle(fontSize: 28, fontWeight: FontWeight.normal),),],
+    ),
+    Row(children: [
+      Text('Post',
+        style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
+      Text('Page',
+        style: TextStyle(fontSize: 28, fontWeight: FontWeight.normal),),],
+    ),
+    Row(children: [
+      Text('Profile',
+        style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
+      Text('Page',
+        style: TextStyle(fontSize: 28, fontWeight: FontWeight.normal),),],
+    ),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,15 +48,15 @@ class _MyHomePageState extends State<MyHomePage> {
               padding: const EdgeInsets.symmetric(horizontal: 25.0,vertical: 20.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Text('Home',
-                        style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
-                      Text('Page',
-                        style: TextStyle(fontSize: 28, fontWeight: FontWeight.normal),),
-                    ],
-                  ),
+                children: [_pages.elementAt(_selectedIndex),
+                  // Row(
+                  //   children: [
+                  //     Text('Home',
+                  //       style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
+                  //     Text('Page',
+                  //       style: TextStyle(fontSize: 28, fontWeight: FontWeight.normal),),
+                  //   ],
+                  // ),
                   Icon(Icons.notifications_none),
                 ],
               ),
@@ -49,15 +78,31 @@ class _MyHomePageState extends State<MyHomePage> {
 
             //icons card
 
-
             //main category card
           ]
-
-
-
-
           ),
-        )
+        ),
+      bottomNavigationBar: GNav(
+        gap: 5,
+        selectedIndex: _selectedIndex,
+        onTabChange: (index){
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
+        color: Colors.black38,
+        duration: Duration(milliseconds: 100),
+        tabs: const[
+          GButton(icon: Icons.home_outlined,
+            text:'Home' ,),
+          GButton(icon: Icons.star_border,
+            text: 'Fav',),
+          GButton(icon: Icons.add_box_outlined,
+            text: 'Post',),
+          GButton(icon: Icons.person_outline,
+            text: 'Profile',),
+        ],
+      ),
     );;
   }
 }
