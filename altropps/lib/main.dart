@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'HomePage.dart';
+import 'Pages/HomePage.dart';
 //import '../Onboarding_pages.dart';
-import 'Onboarding_pages.dart';
+import 'Pages/Onboarding_pages.dart';
 
 void main() {
   runApp(const MyApp());
