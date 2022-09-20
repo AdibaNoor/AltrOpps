@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:altropps/Pages/FavPage.dart';
 import 'package:altropps/Pages/PostPage.dart';
 import 'package:altropps/Pages/ProfilePage.dart';
@@ -116,12 +114,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       bottomNavigationBar: GNav(
         gap: 5,
-        selectedIndex: _selectedIndex,
-        onTabChange: (index){
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
         color: Colors.black38,
         duration: Duration(milliseconds: 100),
         tabs: [
@@ -146,6 +138,12 @@ class _MyHomePageState extends State<MyHomePage> {
             Navigator.push(context, MaterialPageRoute(builder: (context)=>ProfilePage()));
           },),
         ],
+        selectedIndex: _selectedIndex,
+        onTabChange: (index) {
+          setState(() {
+            _selectedIndex = index;
+          });
+        },
       ),
     );;
   }
