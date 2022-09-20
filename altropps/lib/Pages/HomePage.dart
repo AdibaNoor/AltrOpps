@@ -5,6 +5,30 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
   @override
+  final text = Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark;
+    ? 'DarkTheme'
+    : 'LightTheme';
+    return Scaffold(
+      appBar: AppBar(
+       backgroundColor: Colors.orange,
+       title: Text(MyApp.title),
+       actions: [
+         ChangeThemeButtonWidget(),
+
+     ],
+
+      ), //appbar
+      body: Center(
+        child: Text(
+        'Hello $text1',
+         style: TextStyle(
+        fontSize: 28,
+        fontWeight: FontWeight.bold,
+          ), //textstyle
+        ), //text
+      ),//center
+
+   ); //scaffold
   State<MyHomePage> createState() => _MyHomePageState();
 }
 

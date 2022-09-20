@@ -31,19 +31,25 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
-  // that it has a State object (defined below) that contains fields that affect
-  // how it looks.
-
-  // This class is the configuration for the state. It holds the values (in this
-  // case the title) provided by the parent (in this case the App widget) and
-  // used by the build method of the State. Fields in a Widget subclass are
-  // always marked "final".
+  static const String title = 'Light & Dark Theme';
 
   final String title;
 
   @override
+  Widget build(BuildContext context) => ChangeNotifierProvider(
+    create: (context) => ThemeProvider(),
+    builder: (context, _) {
+      final provider = Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark;
+
+      return MaterialApp(
+        title: title,
+        themeMode: ThemeMode.system,
+        theme: MyThemes.lightTheme,
+        darkTheme: MyThemes.darkTheme,
+        home: HomePage(),
+      ); //Material App
+    },
+  ); //changeNotifierProvider
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
