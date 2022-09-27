@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 import 'Pages/Onboarding_pages.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(systemNavigationBarColor: Colors.transparent, statusBarColor: Colors.transparent));
     return MaterialApp(
       home: OnBoardingPage(),
       debugShowCheckedModeBanner: false,
