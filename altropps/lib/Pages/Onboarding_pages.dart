@@ -18,7 +18,7 @@ class OnBoardingPage extends StatelessWidget {
             PageViewModel(
               title: 'Get it first.',
               body: 'Get notified about new opportunities !!',
-              //image: buildImage('assets/readingbook.png'),
+              image: buildImage('assets/logo.png'),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
@@ -38,12 +38,12 @@ class OnBoardingPage extends StatelessWidget {
               decoration: getPageDecoration(),
             ),
           ],
-          done: Text('Home', style: TextStyle(fontWeight: FontWeight.w600, color: Color(0xFFF6DEC0))),
+          done: Text('Home', style: TextStyle(fontWeight: FontWeight.w600, color: Color(0xFFD58DE0))),
           onDone: () => goToHome(context),
           showSkipButton: true,
-          skip: Text('Skip', style: TextStyle(color: Color(0xFFF6DEC0) ),),
+          skip: Text('Skip', style: TextStyle(color: Color(0xFFD58DE0),fontSize: 15 ),),
           onSkip: () => goToHome(context),
-          next: Icon(Icons.arrow_forward, color: Color(0xFFF6DEC0),),
+          next: Text('Next', style: TextStyle(color: Color(0xFFD58DE0),fontSize: 15),),
           dotsDecorator: getDotDecoration(),
           onChange: (index) => print('Page $index selected'),
           globalBackgroundColor: Colors.white,
@@ -68,9 +68,9 @@ class OnBoardingPage extends StatelessWidget {
   DotsDecorator getDotDecoration() =>
       DotsDecorator(
         color: Color(0xFFBDBDBD),
-        activeColor: Color(0xFFEFEAE5),
+        activeColor: Color(0xFFD58DE0),
         size: Size(10, 10),
-        activeSize: Size(22, 10),
+        activeSize: Size(25, 10),
         activeShape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
         ),
@@ -82,7 +82,7 @@ class OnBoardingPage extends StatelessWidget {
             fontSize: 28, fontWeight: FontWeight.bold, color: Colors.black),
         bodyTextStyle: TextStyle(fontSize: 20),
         imagePadding: EdgeInsets.all(24),
-        pageColor: Color(0xFFF6DEC0),
+        pageColor: Colors.white,
 
       );
 }

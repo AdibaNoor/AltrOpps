@@ -70,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xFFF6DEC0),
+        backgroundColor: Colors.white,
         body: SafeArea(
           child: Column(children:[
             //appbar
@@ -94,17 +94,68 @@ class _MyHomePageState extends State<MyHomePage> {
             SizedBox(height: 25,),
             //horizontal scroll
             Container(
-              height: 200,
+              height: 150,
               child: PageView(
-
                 children: [
                   Card_custom(),
                   Card_custom(),
                   Card_custom(),
-
                 ],
               ),
-            )
+            ),
+            SizedBox(height: 25,),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  children: [
+                    Container(
+                      child: Center(child: Text('Scholarship',style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),)),
+                      width: 140,
+                      height: 140,
+                        decoration: BoxDecoration(
+                            color: Color(0xFFD58DE0),
+                            borderRadius: BorderRadius.circular(12)
+                        ),
+                    ),
+                    SizedBox(height: 25,),
+                    Container(
+                      child: Center(child: Text('Mentorship & Fellowship',style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),textAlign: TextAlign.center,)),
+                      width: 140,
+                      height: 170,
+                      decoration: BoxDecoration(
+                          color: Color(0xFFD58DE0),
+                          borderRadius: BorderRadius.circular(12)
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Container(
+                        child: Center(child: Text('Live Opportunities',style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),textAlign: TextAlign.center,)),
+                        decoration: BoxDecoration(
+                            color: Color(0xFFD58DE0),
+                            borderRadius: BorderRadius.circular(12)
+                        ),
+                      width: 140,
+                        height: 170,
+                        ),
+                    SizedBox(height: 25,),
+                    Container(
+                      child: Center(child: Text('Open Source',style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),)),
+                      decoration: BoxDecoration(
+                        color: Color(0xFFD58DE0),
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      width: 140,
+                        height: 140,
+                        // color: Color(0xFFD58DE0)
+                      ),
+                  ],
+                ),
+              ],
+            ),
 
             //icons card
 
