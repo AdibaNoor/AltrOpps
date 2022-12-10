@@ -1,6 +1,10 @@
 import 'package:altropps/Pages/FavPage.dart';
+import 'package:altropps/Pages/LiveOpportunityPage.dart';
+import 'package:altropps/Pages/MentorshipFellowshipPage.dart';
+import 'package:altropps/Pages/OpenSourcePage.dart';
 import 'package:altropps/Pages/PostPage.dart';
 import 'package:altropps/Pages/ProfilePage.dart';
+import 'package:altropps/Pages/ScholarshipPage.dart';
 import 'package:altropps/util/Card_custom.dart';
 import 'package:flutter/material.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -72,95 +76,118 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
-          child: Column(children:[
-            //appbar
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25.0,vertical: 20.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Expanded(
+            child: Column(children:[
+              //appbar
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 25.0,vertical: 20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        Text('Home',
+                          style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
+                        Text('Page',
+                          style: TextStyle(fontSize: 28, fontWeight: FontWeight.normal),),
+                      ],
+                    ),
+                    Icon(Icons.notifications_none),
+                  ],
+                ),
+              ),
+              SizedBox(height: 10,),
+              //horizontal scroll
+              Container(
+                height: 180,
+                child: PageView(
+                  children: [
+                    Card_custom(),
+                    Card_custom(),
+                    Card_custom(),
+                  ],
+                ),
+              ),
+              SizedBox(height: 25,),
+              //main category card
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Row(
+                  Column(
                     children: [
-                      Text('Home',
-                        style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
-                      Text('Page',
-                        style: TextStyle(fontSize: 28, fontWeight: FontWeight.normal),),
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> ScholarshipPage()));
+                        },
+                        child: Container(
+                          child: Center(child: Text('Scholarship',style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),)),
+                          width: 140,
+                          height: 140,
+                            decoration: BoxDecoration(
+                                color: Color(0xFFD58DE0),
+                                borderRadius: BorderRadius.circular(12)
+                            ),
+                        ),
+                      ),
+                      SizedBox(height: 25,),
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> MentorshipFellowshipPage()));
+                        },
+                        child: Container(
+                          child: Center(child: Text('Mentorship & Fellowship',style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),textAlign: TextAlign.center,)),
+                          width: 140,
+                          height: 170,
+                          decoration: BoxDecoration(
+                              color: Color(0xFFD58DE0),
+                              borderRadius: BorderRadius.circular(12)
+                          ),
+                        ),
+                      ),
                     ],
                   ),
-                  Icon(Icons.notifications_none),
+                  Column(
+                    children: [
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> LiveOpportunityPage()));
+                        },
+                        child: Container(
+                            child: Center(child: Text('Live Opportunities',
+                              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),textAlign: TextAlign.center,)),
+                            decoration: BoxDecoration(
+                                color: Color(0xFFD58DE0),
+                                borderRadius: BorderRadius.circular(12)
+                            ),
+                          width: 140,
+                            height: 170,
+                            ),
+                      ),
+                      SizedBox(height: 25,),
+                      InkWell(
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> OpenSourcePage()));
+                        },
+                        child: Container(
+                          child: Center(child: Text('Open Source',style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),)),
+                          decoration: BoxDecoration(
+                            color: Color(0xFFD58DE0),
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                          width: 140,
+                            height: 140,
+                            // color: Color(0xFFD58DE0)
+                          ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
-            ),
-            SizedBox(height: 25,),
-            //horizontal scroll
-            Container(
-              height: 150,
-              child: PageView(
-                children: [
-                  Card_custom(),
-                  Card_custom(),
-                  Card_custom(),
-                ],
-              ),
-            ),
-            SizedBox(height: 25,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  children: [
-                    Container(
-                      child: Center(child: Text('Scholarship',style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),)),
-                      width: 140,
-                      height: 140,
-                        decoration: BoxDecoration(
-                            color: Color(0xFFD58DE0),
-                            borderRadius: BorderRadius.circular(12)
-                        ),
-                    ),
-                    SizedBox(height: 25,),
-                    Container(
-                      child: Center(child: Text('Mentorship & Fellowship',style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),textAlign: TextAlign.center,)),
-                      width: 140,
-                      height: 170,
-                      decoration: BoxDecoration(
-                          color: Color(0xFFD58DE0),
-                          borderRadius: BorderRadius.circular(12)
-                      ),
-                    ),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Container(
-                        child: Center(child: Text('Live Opportunities',style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),textAlign: TextAlign.center,)),
-                        decoration: BoxDecoration(
-                            color: Color(0xFFD58DE0),
-                            borderRadius: BorderRadius.circular(12)
-                        ),
-                      width: 140,
-                        height: 170,
-                        ),
-                    SizedBox(height: 25,),
-                    Container(
-                      child: Center(child: Text('Open Source',style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),)),
-                      decoration: BoxDecoration(
-                        color: Color(0xFFD58DE0),
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      width: 140,
-                        height: 140,
-                        // color: Color(0xFFD58DE0)
-                      ),
-                  ],
-                ),
-              ],
-            ),
 
-            //icons card
+              //icons card
 
-            //main category card
-          ]
+            ]
+            ),
           ),
         ),
       bottomNavigationBar: GNav(
