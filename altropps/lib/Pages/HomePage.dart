@@ -74,28 +74,23 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: Icon(Icons.dashboard,color: Color(0xFFD58DE0),),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            Icon(Icons.notifications_none_rounded,color: Colors.black),
+          ],
+        ),
+
+      ),
         backgroundColor: Colors.white,
         body: SafeArea(
             child: Column(children:[
               //appbar
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0,vertical: 20.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Text('Home',
-                          style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
-                        Text('Page',
-                          style: TextStyle(fontSize: 28, fontWeight: FontWeight.normal),),
-                      ],
-                    ),
-                    Icon(Icons.notifications_none),
-                  ],
-                ),
-              ),
-              SizedBox(height: 10,),
+             
               //horizontal scroll
               Container(
                 height: 180,
