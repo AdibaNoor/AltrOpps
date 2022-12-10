@@ -1,3 +1,5 @@
+import 'package:altropps/Pages/LoginPage.dart';
+import 'package:altropps/Pages/RegistrationPage.dart';
 import 'package:flutter/material.dart';
 
 import 'package:introduction_screen/introduction_screen.dart';
@@ -12,13 +14,11 @@ class OnBoardingPage extends StatelessWidget {
             PageViewModel(
               title: 'Grab The opportunity before it lapses!!',
               body: 'Mentorship,Fellowship,Live Opportunities, Open source Projects all available at your fingertip.',
-              //image: buildImage('assets/ebook.png'),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
               title: 'Get it first.',
               body: 'Get notified about new opportunities !!',
-              image: buildImage('assets/logo.png'),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
@@ -28,8 +28,48 @@ class OnBoardingPage extends StatelessWidget {
               decoration: getPageDecoration(),
             ),
             PageViewModel(
-              title: 'Set the reminder.',
-              body: 'Never miss any deadline.',
+              // title: '',
+              titleWidget: Text("Join us in and never miss a deadline!.",
+                style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),textAlign: TextAlign.center,),
+              image: buildImage('assets/logo.png'),
+              bodyWidget: Container(
+                child: Column(
+                  children: [
+                    // Text('',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),),
+                    // SizedBox(height: 25,),
+                    InkWell(
+                      onTap: (){
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> LoginPage()));
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        width: 300,
+                        child: Text('Login',textAlign: TextAlign.center,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500,color: Colors.white),),
+                        decoration: BoxDecoration(
+                          color: Color(0xFFE2A5EF),
+                          borderRadius: BorderRadius.circular(20),
+
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 15,),
+                    InkWell(
+                      onTap: (){
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> RegistrationPage()));
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        width: 300,
+                        child: Text("Sign Up",textAlign: TextAlign.center,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500,color: Colors.white),),
+                        decoration: BoxDecoration(
+                          color: Color(0xFFD58DE0),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               // footer: ButtonWidget(
               //   text: 'Start Reading',
               //   onClicked: () => goToHome(context),
@@ -38,12 +78,12 @@ class OnBoardingPage extends StatelessWidget {
               decoration: getPageDecoration(),
             ),
           ],
-          done: Text('Home', style: TextStyle(fontWeight: FontWeight.w600, color: Color(0xFFD58DE0))),
+          done: Text('Home', style: TextStyle(fontWeight: FontWeight.w600, color: Color(0xFFD58DE0),fontSize: 20)),
           onDone: () => goToHome(context),
           showSkipButton: true,
-          skip: Text('Skip', style: TextStyle(color: Color(0xFFD58DE0),fontSize: 15 ),),
+          skip: Text('Skip', style: TextStyle(color: Color(0xFFD58DE0),fontSize: 20 ),),
           onSkip: () => goToHome(context),
-          next: Text('Next', style: TextStyle(color: Color(0xFFD58DE0),fontSize: 15),),
+          next: Text('Next', style: TextStyle(color: Color(0xFFD58DE0),fontSize: 20),),
           dotsDecorator: getDotDecoration(),
           onChange: (index) => print('Page $index selected'),
           globalBackgroundColor: Colors.white,

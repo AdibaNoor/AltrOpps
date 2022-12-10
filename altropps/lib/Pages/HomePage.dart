@@ -76,7 +76,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
-          child: Expanded(
             child: Column(children:[
               //appbar
               Padding(
@@ -129,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                         ),
                       ),
-                      SizedBox(height: 25,),
+                      SizedBox(height: 15,),
                       InkWell(
                         onTap: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context)=> MentorshipFellowshipPage()));
@@ -163,7 +162,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             height: 170,
                             ),
                       ),
-                      SizedBox(height: 25,),
+                      SizedBox(height: 15,),
                       InkWell(
                         onTap: (){
                           Navigator.push(context, MaterialPageRoute(builder: (context)=> OpenSourcePage()));
@@ -188,7 +187,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
             ]
             ),
-          ),
         ),
       bottomNavigationBar: GNav(
         gap: 5,
@@ -223,6 +221,6 @@ class _MyHomePageState extends State<MyHomePage> {
           });
         },
       ),
-    );;
+    );
   }
 }
