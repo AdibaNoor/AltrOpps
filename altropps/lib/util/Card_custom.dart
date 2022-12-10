@@ -13,7 +13,7 @@ class _Card_customState extends State<Card_custom> {
       padding: const EdgeInsets.symmetric(horizontal: 25),
       child: Container(
         width: 300,
-        decoration: BoxDecoration(color: Colors.white,
+        decoration: BoxDecoration(color: Color(0xFFD58DE0),
             borderRadius: BorderRadius.circular(16)),
         child: Column(
           children: [

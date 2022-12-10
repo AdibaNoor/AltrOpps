@@ -1,24 +1,25 @@
-import 'package:flutter/material.dart';
 
+import 'package:altropps/Pages/HomePage.dart';
+import 'package:altropps/Pages/LoginPage.dart';
+import 'package:altropps/Pages/RegistrationPage.dart';
+import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
-import 'HomePage.dart';
 class OnBoardingPage extends StatelessWidget {
   @override
-  Widget build(BuildContext context) =>
-      SafeArea(
+  Widget build(BuildContext context) => SafeArea(
         child: IntroductionScreen(
           pages: [
             PageViewModel(
               title: 'Grab The opportunity before it lapses!!',
+
               body: 'Mentorship,Fellowship,Live Opportunities, Open source Projects all available at your fingertip.',
-              //image: buildImage('assets/ebook.png'),
+
               decoration: getPageDecoration(),
             ),
             PageViewModel(
               title: 'Get it first.',
               body: 'Get notified about new opportunities !!',
-              //image: buildImage('assets/readingbook.png'),
               decoration: getPageDecoration(),
             ),
             PageViewModel(
@@ -28,8 +29,48 @@ class OnBoardingPage extends StatelessWidget {
               decoration: getPageDecoration(),
             ),
             PageViewModel(
-              title: 'Set the reminder.',
-              body: 'Never miss any deadline.',
+              // title: '',
+              titleWidget: Text("Join us in and never miss a deadline!.",
+                style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500),textAlign: TextAlign.center,),
+              image: buildImage('assets/logo.png'),
+              bodyWidget: Container(
+                child: Column(
+                  children: [
+                    // Text('',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w400),),
+                    // SizedBox(height: 25,),
+                    InkWell(
+                      onTap: (){
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> LoginPage()));
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        width: 300,
+                        child: Text('Login',textAlign: TextAlign.center,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500,color: Colors.white),),
+                        decoration: BoxDecoration(
+                          color: Color(0xFFE2A5EF),
+                          borderRadius: BorderRadius.circular(20),
+
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 15,),
+                    InkWell(
+                      onTap: (){
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> RegistrationPage()));
+                      },
+                      child: Container(
+                        padding: EdgeInsets.all(10),
+                        width: 300,
+                        child: Text("Sign Up",textAlign: TextAlign.center,style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500,color: Colors.white),),
+                        decoration: BoxDecoration(
+                          color: Color(0xFFD58DE0),
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               // footer: ButtonWidget(
               //   text: 'Start Reading',
               //   onClicked: () => goToHome(context),
@@ -38,15 +79,20 @@ class OnBoardingPage extends StatelessWidget {
               decoration: getPageDecoration(),
             ),
           ],
-          done: Text('Home', style: TextStyle(fontWeight: FontWeight.w600, color: Color(0xFFF6DEC0))),
+
+          done: Text('Home', style: TextStyle(fontWeight: FontWeight.w600, color: Color(0xFFD58DE0),fontSize: 20)),
           onDone: () => goToHome(context),
           showSkipButton: true,
-          skip: Text('Skip', style: TextStyle(color: Color(0xFFF6DEC0) ),),
+          skip: Text('Skip', style: TextStyle(color: Color(0xFFD58DE0),fontSize: 20 ),),
           onSkip: () => goToHome(context),
-          next: Icon(Icons.arrow_forward, color: Color(0xFFF6DEC0),),
+          next: Text('Next', style: TextStyle(color: Color(0xFFD58DE0),fontSize: 20),),
+
           dotsDecorator: getDotDecoration(),
           onChange: (index) => print('Page $index selected'),
-          globalBackgroundColor: Colors.white,
+          globalBackgroundColor:
+              Theme.of(context).brightness == Brightness.light
+                  ? Colors.white
+                  : Colors.black,
           // skip: 0,
           //nextFlex: 0,
           // isProgressTap: false,
@@ -57,32 +103,31 @@ class OnBoardingPage extends StatelessWidget {
         ),
       );
 
-  void goToHome(context) =>
-      Navigator.of(context).pushReplacement(
+  void goToHome(context) => Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) => MyHomePage()),
       );
 
   Widget buildImage(String path) =>
       Center(child: Image.asset(path, width: 350));
 
-  DotsDecorator getDotDecoration() =>
-      DotsDecorator(
+  DotsDecorator getDotDecoration() => DotsDecorator(
         color: Color(0xFFBDBDBD),
-        activeColor: Color(0xFFEFEAE5),
+        activeColor: Color(0xFFD58DE0),
         size: Size(10, 10),
-        activeSize: Size(22, 10),
+        activeSize: Size(25, 10),
         activeShape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
         ),
       );
 
-  PageDecoration getPageDecoration() =>
-      PageDecoration(
+  PageDecoration getPageDecoration() => PageDecoration(
         titleTextStyle: TextStyle(
             fontSize: 28, fontWeight: FontWeight.bold, color: Colors.black),
         bodyTextStyle: TextStyle(fontSize: 20),
         imagePadding: EdgeInsets.all(24),
-        pageColor: Color(0xFFF6DEC0),
+
+        pageColor: Colors.white,
+
 
       );
 }
