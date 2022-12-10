@@ -1,19 +1,20 @@
+
+import 'package:altropps/Pages/HomePage.dart';
 import 'package:altropps/Pages/LoginPage.dart';
 import 'package:altropps/Pages/RegistrationPage.dart';
 import 'package:flutter/material.dart';
-
 import 'package:introduction_screen/introduction_screen.dart';
 
-import 'HomePage.dart';
 class OnBoardingPage extends StatelessWidget {
   @override
-  Widget build(BuildContext context) =>
-      SafeArea(
+  Widget build(BuildContext context) => SafeArea(
         child: IntroductionScreen(
           pages: [
             PageViewModel(
               title: 'Grab The opportunity before it lapses!!',
+
               body: 'Mentorship,Fellowship,Live Opportunities, Open source Projects all available at your fingertip.',
+
               decoration: getPageDecoration(),
             ),
             PageViewModel(
@@ -78,15 +79,20 @@ class OnBoardingPage extends StatelessWidget {
               decoration: getPageDecoration(),
             ),
           ],
+
           done: Text('Home', style: TextStyle(fontWeight: FontWeight.w600, color: Color(0xFFD58DE0),fontSize: 20)),
           onDone: () => goToHome(context),
           showSkipButton: true,
           skip: Text('Skip', style: TextStyle(color: Color(0xFFD58DE0),fontSize: 20 ),),
           onSkip: () => goToHome(context),
           next: Text('Next', style: TextStyle(color: Color(0xFFD58DE0),fontSize: 20),),
+
           dotsDecorator: getDotDecoration(),
           onChange: (index) => print('Page $index selected'),
-          globalBackgroundColor: Colors.white,
+          globalBackgroundColor:
+              Theme.of(context).brightness == Brightness.light
+                  ? Colors.white
+                  : Colors.black,
           // skip: 0,
           //nextFlex: 0,
           // isProgressTap: false,
@@ -97,16 +103,14 @@ class OnBoardingPage extends StatelessWidget {
         ),
       );
 
-  void goToHome(context) =>
-      Navigator.of(context).pushReplacement(
+  void goToHome(context) => Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) => MyHomePage()),
       );
 
   Widget buildImage(String path) =>
       Center(child: Image.asset(path, width: 350));
 
-  DotsDecorator getDotDecoration() =>
-      DotsDecorator(
+  DotsDecorator getDotDecoration() => DotsDecorator(
         color: Color(0xFFBDBDBD),
         activeColor: Color(0xFFD58DE0),
         size: Size(10, 10),
@@ -116,13 +120,14 @@ class OnBoardingPage extends StatelessWidget {
         ),
       );
 
-  PageDecoration getPageDecoration() =>
-      PageDecoration(
+  PageDecoration getPageDecoration() => PageDecoration(
         titleTextStyle: TextStyle(
             fontSize: 28, fontWeight: FontWeight.bold, color: Colors.black),
         bodyTextStyle: TextStyle(fontSize: 20),
         imagePadding: EdgeInsets.all(24),
+
         pageColor: Colors.white,
+
 
       );
 }
