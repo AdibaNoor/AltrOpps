@@ -1,5 +1,7 @@
 import 'package:altropps/Pages/HomePage.dart';
+import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class MentorshipFellowshipPage extends StatefulWidget {
   const MentorshipFellowshipPage({Key? key}) : super(key: key);
@@ -9,6 +11,7 @@ class MentorshipFellowshipPage extends StatefulWidget {
 }
 
 class _MentorshipFellowshipPageState extends State<MentorshipFellowshipPage> {
+  final ref = FirebaseDatabase.instance.ref('FELLOWSHIPS');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +25,21 @@ class _MentorshipFellowshipPageState extends State<MentorshipFellowshipPage> {
         elevation: 0,
         backgroundColor: Colors.white,
       ),
+      body: Column(
+          children: [
+            Expanded(
+              child: FirebaseAnimatedList(
+                query: ref,
+                itemBuilder: (context, snapshot, animation, index) {
+                  return ListTile(
+                    title: Text(snapshot.child('B').value.toString()),
+                  );
+                }
+              ),
+            )
+          ],
+        ),
+
     );
   }
 }
