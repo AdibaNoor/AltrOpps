@@ -1,4 +1,3 @@
-
 import 'package:altropps/Pages/HomePage.dart';
 import 'package:altropps/Pages/LogInPage.dart';
 import 'package:altropps/Pages/RegistrationPage.dart';
