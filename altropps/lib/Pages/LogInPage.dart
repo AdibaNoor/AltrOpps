@@ -1,5 +1,7 @@
 import 'package:altropps/Pages/RegistrationPage.dart';
 import 'package:flutter/material.dart';
+import 'package:altropps/Pages/HomePage.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -24,9 +26,11 @@ class _LoginPageState extends State<LoginPage> {
             children: [
               Image.asset('assets/logo.png'),
               Text('LogIn',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
-              Text('Sign in into your account',style: TextStyle(fontSize: 10, color: Colors.grey[500])),
+              Text('Sign in to your account',style: TextStyle(fontSize: 10, color: Colors.grey[500])),
               SizedBox(height:50, width :20),
               Container(
+                margin:const EdgeInsets.only(left:20, right:20),
+                width: w,
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
@@ -40,7 +44,10 @@ class _LoginPageState extends State<LoginPage> {
                   ]
                 ),
                 child: TextField(
+
                   decoration:InputDecoration(
+                      hintText: "Email address",
+                      prefixIcon: Icon(Icons.email, color: Colors.purple),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(20),
                       borderSide: BorderSide(
@@ -63,6 +70,8 @@ class _LoginPageState extends State<LoginPage> {
               ),
               SizedBox(height:20,),
               Container(
+                margin:const EdgeInsets.only(left:20, right:20),
+                width: w,
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(20),
@@ -77,6 +86,8 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 child: TextField(
                     decoration:InputDecoration(
+                        hintText: "Password",
+                        prefixIcon: Icon(Icons.password, color: Colors.purple),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),
                           borderSide: BorderSide(
@@ -97,29 +108,43 @@ class _LoginPageState extends State<LoginPage> {
                     )
                 ),
               ),
-              SizedBox(height:20,),
-              Row(
-                children: [
-                  Expanded(child: Container(),),
-                  Text('Forgot password?',style: TextStyle(fontSize: 10, color: Colors.grey[500])),
-                ]
-              ),
+              SizedBox(height:10,),
+              Container(margin:const EdgeInsets.only(left:20, right:20),
+                  width: w,
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text('Forgot password?',style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.black45)),
+                      ]
+                  )),
+              // Row(
+              //   children: [
+              //     Expanded(child: Container(),),
+              //     Text('Forgot password?',style: TextStyle(fontSize: 10, color: Colors.grey[500])),
+              //   ]
+              // ),
               SizedBox(height:70),
-              Container(
-                width: w*0.5,
-                height: h*0.08,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(20),
-                  image: DecorationImage(
-                    image: AssetImage(
-                      "assets/Loginbtn.png"
-                    )
-                  )
-                ),
 
-                  child: Center(
-                    child:Text('Sign in',style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold, color: Colors.white,),),
-                  )
+
+              InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> MyHomePage()));
+                },
+                child: Container(
+                    width: w*0.5,
+                    height: h*0.08,
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        image: DecorationImage(
+                            image: AssetImage(
+                                "assets/Loginbtn.png"
+                            )
+                        )
+                    ),
+                    child: Center(
+                      child:Text('Sign in',style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold, color: Colors.white,),),
+                    )
+                ),
               ),
               SizedBox(height: w*0.2),
 

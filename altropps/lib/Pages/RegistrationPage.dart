@@ -170,6 +170,15 @@ class _RegistrationPageState extends State<RegistrationPage> {
               //       Text('Forgot password?',style: TextStyle(fontSize: 10, color: Colors.grey[500]), ),
               //     ]
               // ),
+              SizedBox(height:10,),
+              Container(margin:const EdgeInsets.only(left:20, right:20),
+                  width: w,
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Text('Forgot password?',style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Colors.black45)),
+                      ]
+                  )),
 
               SizedBox(height:20),
 
