@@ -1,4 +1,4 @@
-import 'package:altropps/Pages/LoginPage.dart';
+import 'package:altropps/Pages/LogInPage.dart';
 import 'package:flutter/material.dart';
 
 class RegistrationPage extends StatefulWidget {

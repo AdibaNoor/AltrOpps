@@ -1,6 +1,6 @@
 
 import 'package:altropps/Pages/HomePage.dart';
-import 'package:altropps/Pages/LoginPage.dart';
+import 'package:altropps/Pages/LogInPage.dart';
 import 'package:altropps/Pages/RegistrationPage.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';

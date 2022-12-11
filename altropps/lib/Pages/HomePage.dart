@@ -15,7 +15,7 @@ import '../util/theme_provider.dart';
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
-  
+
 // class HomePage extends StatelessWidget {
   // @override
   // Widget build(BuildContext context) => Scaffold(
@@ -62,14 +62,8 @@ class MyHomePage extends StatefulWidget {
 //   }
 // }
   @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-    throw UnimplementedError();
+  State<MyHomePage> createState() => _MyHomePageState();
   }
-}
-
-State<MyHomePage> createState() => _MyHomePageState();
-
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
@@ -104,7 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final text = Provider.of<ThemeProvider>(context).themeMode == ThemeMode.dark
         ? 'DarkTheme'
         : 'LightTheme';
-        
+
     return Scaffold(
 
       appBar: AppBar(
@@ -123,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
         body: SafeArea(
             child: Column(children:[
               //appbar
-             
+
               //horizontal scroll
               Container(
                 height: 180,
@@ -263,8 +257,6 @@ class _MyHomePageState extends State<MyHomePage> {
         },
       ),
     );
-
-    
 
   }
 }
