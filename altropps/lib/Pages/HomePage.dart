@@ -257,6 +257,7 @@ class _MyHomePageState extends State<MyHomePage> {
         tabs: [
           GButton(
             icon: Icons.home_outlined,
+            textColor: Colors.grey,
             text: 'Home',
             onPressed: () {
               Navigator.push(context,
