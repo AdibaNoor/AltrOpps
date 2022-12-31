@@ -65,10 +65,11 @@ class _MentorshipFellowshipPageState extends State<MentorshipFellowshipPage> {
                             Text(snapshot.child('B').value.toString()),
                             Link(
                               target: LinkTarget.self,
-                              uri: Uri.parse(snapshot.child('B').value.toString()),
+                              // uri: Uri.parse("snapshot.child('B').value.toString()"),
+                              uri: Uri.parse("www.google.com"),
                               builder: (context,followLink) => ElevatedButton(
                                 child: Text('Check out this opportunity'),
-                                onPressed: (){},
+                                onPressed: followLink,
                               ),
                             ),
                           ],
