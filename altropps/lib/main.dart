@@ -1,3 +1,6 @@
+
+
+import 'package:altropps/Pages/MentorshipFellowshipPage.dart';
 import 'package:altropps/Pages/auth_controller.dart';
 import 'package:altropps/util/theme_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -6,13 +9,15 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:get/get.dart';
 
+
+
 // import 'package:theme_example/page/home_page.dart';
 // import 'package:theme_example/provider/theme_provider.dart';
 
 import 'Pages/Onboarding_pages.dart';
 import 'firebase_options.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp().then((value) => Get.put(AuthController()));
   runApp(ChangeNotifierProvider<ThemeProvider>(
@@ -49,4 +54,6 @@ class MyApp extends StatelessWidget {
           });
         },
       );
+
+
 }

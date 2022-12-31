@@ -142,7 +142,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
                 GestureDetector(
                   onTap: (){
                     AuthController.instance.register(emailController.text.trim(), passwordController.text.trim());
-                    //AuthController.instance.register(emailController.text.trim(), passwordController.text.trim());
                   },
                   child: Container(
                       width: w*0.5,
