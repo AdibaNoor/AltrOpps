@@ -42,7 +42,9 @@ dependencies:
   firebase_auth: ^4.2.0
   firebase_database: ^10.0.7
   url_launcher: ^6.1.7
+
   get: ^4.6.5
+  flutter_linkify: ^5.0.2
 
 
 dev_dependencies:
