@@ -184,6 +184,13 @@
             </list>
           </value>
         </entry>
+        <entry key="flutter_linkify">
+          <value>
+            <list>
+              <option value="C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_linkify-5.0.2/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="flutter_native_splash">
           <value>
             <list>
@@ -251,6 +258,13 @@
           <value>
             <list>
               <option value="C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="linkify">
+          <value>
+            <list>
+              <option value="C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/linkify-4.1.0/lib" />
             </list>
           </value>
         </entry>
@@ -485,6 +499,7 @@
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-10.0.7/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database_platform_interface-0.2.2+15/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database_web-0.2.1+17/lib" />
+      <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_linkify-5.0.2/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_native_splash-2.2.16/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/google_nav_bar-5.0.6/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/html-0.15.1/lib" />
@@ -493,6 +508,7 @@
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/introduction_screen-3.1.1/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.4/lib" />
+      <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/linkify-4.1.0/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.12/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/material_color_utilities-0.1.5/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/meta-1.8.0/lib" />
