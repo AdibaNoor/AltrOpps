@@ -81,7 +81,15 @@ class _LiveOpportunityPageState extends State<LiveOpportunityPage> {
                                       onTap: ()=> launch(snapshot.child('LINK').value.toString()),
                                       child: Container(
                                         alignment: Alignment.center,
-                                        child:Text('Apply Now',style: TextStyle(color: Colors.black,fontSize: 12,fontWeight: FontWeight.w500),),
+                                        child: Row(
+                                          mainAxisAlignment: MainAxisAlignment.center,
+                                          children: [
+                                            Text('Apply Now',
+                                              style: TextStyle(color: Colors.black,fontSize: 12,fontWeight: FontWeight.w500),),
+                                            Icon(Icons.call_made_rounded,size: 18,color: Colors.black,),
+                                          ],
+
+                                        ),
                                         width: w*0.4,
                                         height: h*0.05,
                                         decoration: BoxDecoration(
