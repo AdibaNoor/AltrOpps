@@ -272,14 +272,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   context, MaterialPageRoute(builder: (context) => FavPage()));
             },
           ),
-          GButton(
-            icon: Icons.add_box_outlined,
-            text: 'Post',
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => PostPage()));
-            },
-          ),
+          // GButton(
+          //   icon: Icons.add_box_outlined,
+          //   text: 'Post',
+          //   onPressed: () {
+          //     Navigator.push(
+          //         context, MaterialPageRoute(builder: (context) => PostPage()));
+          //   },
+          // ),
           GButton(
             icon: Icons.person_outline,
             text: 'Profile',

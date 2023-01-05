@@ -22,7 +22,7 @@ class AuthController extends GetxController{
   }
   
   _initialScreen(User? user){
-    if(user==null){
+    if(user == null){
       print("login page");
       Get.offAll(()=>LoginPage());
     }
@@ -36,7 +36,7 @@ class AuthController extends GetxController{
       await auth.createUserWithEmailAndPassword(email: email, password: password);
     }
     catch (e) {
-      Get.snackbar("About User", "User Meassage",
+      Get.snackbar("About User", "User Message",
       backgroundColor: Colors.redAccent,
       snackPosition: SnackPosition.BOTTOM,
       titleText: Text(
@@ -59,7 +59,7 @@ class AuthController extends GetxController{
       await auth.signInWithEmailAndPassword(email: email, password: password);
     }
     catch (e) {
-      Get.snackbar("About Login", "Login Meassage",
+      Get.snackbar("About Login", "Login Message",
           backgroundColor: Colors.redAccent,
           snackPosition: SnackPosition.BOTTOM,
           titleText: Text(

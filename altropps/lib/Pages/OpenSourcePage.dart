@@ -2,6 +2,8 @@ import 'package:altropps/Pages/HomePage.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/link.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class OpenSourcePage extends StatefulWidget {
   const OpenSourcePage({Key? key}) : super(key: key);
@@ -11,9 +13,11 @@ class OpenSourcePage extends StatefulWidget {
 }
 
 class _OpenSourcePageState extends State<OpenSourcePage> {
-  final ref = FirebaseDatabase.instance.ref('FELLOWSHIPS');
+  final ref = FirebaseDatabase.instance.ref('Sheet1');
   @override
   Widget build(BuildContext context) {
+    double w = MediaQuery.of(context).size.width;
+    double h = MediaQuery.of(context).size.height;
     return Scaffold(
       appBar: AppBar(
         leading: InkWell(
@@ -32,22 +36,68 @@ class _OpenSourcePageState extends State<OpenSourcePage> {
                 query: ref,
                 itemBuilder: (context, snapshot, animation, index) {
                   return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 8,horizontal: 20),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 8, horizontal: 20),
                     child: Container(
                       decoration: BoxDecoration(
-                          color:Color(0xFFD58DE0) ,
+                          color: Color(0xFFD58DE0),
                           borderRadius: BorderRadius.circular(20)
                       ),
-                      child: ListTile(
-                        leading: Icon(Icons.person,color: Colors.white,),
-                        title: Text(snapshot.child('A').value.toString()),
-                        subtitle: Text(snapshot.child('B').value.toString()),
-                        tileColor: Color(0xFFD58DE0),
-                        onTap: (){
-                          // const url = Uri.parse("snapshot.child('B').value.toString()")
-                        },
-                        minVerticalPadding: 10,
-                        contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+                      // child: ListTile(
+                      //   leading: Icon(Icons.person,color: Colors.white,),
+                      //   title: Text(snapshot.child('A').value.toString()),
+                      //   subtitle: Text(snapshot.child('B').value.toString()),
+                      //   tileColor: Color(0xFFD58DE0),
+                      //   onTap: (){
+                      //
+                      //   },
+                      //   minVerticalPadding: 10,
+                      //   contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
+                      // ),
+                      child: Container(
+                          padding: EdgeInsets.all(10),
+                          child: Column(
+                            children: [
+                              Container(
+                                alignment:Alignment.center,
+                                child: Text(snapshot
+                                    .child('NAME')
+                                    .value
+                                    .toString(),
+                                  style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.w800,),textAlign: TextAlign.center,),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.white,
+                                ),
+                                padding: EdgeInsets.symmetric(vertical: 15,horizontal: 15),
+                              ),
+                              SizedBox(height: 10,),
+                              Link(
+                                target: LinkTarget.self,
+                                uri: Uri.parse("snapshot.child('LINK').value.toString()"),
+                                // uri: Uri.parse("www.google.com"),
+                                builder: (context, followLink) =>
+                                    InkWell(
+                                      onTap: ()=> launch(snapshot.child('LINK').value.toString()),
+                                      child: Container(
+                                        alignment: Alignment.center,
+                                        child:Text('Apply Now',style: TextStyle(color: Colors.black,fontSize: 12,fontWeight: FontWeight.w500),),
+                                        width: w*0.4,
+                                        height: h*0.05,
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: BorderRadius.circular(20),
+                                          // image: DecorationImage(
+                                          //     image: AssetImage(
+                                          //         "assets/ApplyNow.png"
+                                          //     )
+                                          // ),
+                                        ),
+                                      ),
+                                    ),
+                              ),
+                            ],
+                          )
                       ),
                     ),
                   );

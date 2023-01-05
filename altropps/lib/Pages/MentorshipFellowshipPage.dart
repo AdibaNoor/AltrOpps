@@ -67,12 +67,23 @@ class _MentorshipFellowshipPageState extends State<MentorshipFellowshipPage> {
                       //   contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 8),
                       // ),
                       child: Container(
+                        padding: EdgeInsets.all(10),
                           child: Column(
                             children: [
-                              Text(snapshot
-                                  .child('NAME')
-                                  .value
-                                  .toString()),
+                              Container(
+                                alignment:Alignment.center,
+                                child: Text(snapshot
+                                    .child('NAME')
+                                    .value
+                                    .toString(),
+                                  style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.w800,),textAlign: TextAlign.center,),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.white,
+                                ),
+                                padding: EdgeInsets.symmetric(vertical: 15,horizontal: 15),
+                              ),
+                              SizedBox(height: 10,),
                               Link(
                                 target: LinkTarget.self,
                                 uri: Uri.parse("snapshot.child('LINK').value.toString()"),
@@ -81,15 +92,18 @@ class _MentorshipFellowshipPageState extends State<MentorshipFellowshipPage> {
                                     InkWell(
                                       onTap: ()=> launch(snapshot.child('LINK').value.toString()),
                                       child: Container(
-                                          width: w*0.5,
-                                          height: h*0.08,
+                                        alignment: Alignment.center,
+                                        child:Text('Apply Now',style: TextStyle(color: Colors.black,fontSize: 12,fontWeight: FontWeight.w500),),
+                                          width: w*0.4,
+                                          height: h*0.05,
                                           decoration: BoxDecoration(
+                                            color: Colors.white,
                                               borderRadius: BorderRadius.circular(20),
-                                              image: DecorationImage(
-                                                  image: AssetImage(
-                                                      "assets/ApplyNow.png"
-                                                  )
-                                              )
+                                              // image: DecorationImage(
+                                              //     image: AssetImage(
+                                              //         "assets/ApplyNow.png"
+                                              //     )
+                                              // ),
                                           ),
                                       ),
                                     ),
