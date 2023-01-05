@@ -1,4 +1,6 @@
 import 'package:altropps/Pages/HomePage.dart';
+import 'package:altropps/Pages/LiveOpportunityPage.dart';
+import 'package:altropps/widgets/info_card.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -12,170 +14,59 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFF6DEC0),
-      body: Column(
-        children: [
-          Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 10.0, vertical: 25.0),
-            child: Row(
-              children: [
-                GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacement(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => MyHomePage()));
-                    },
-                    child: Icon(Icons.arrow_back_ios_new)),
-                SizedBox(
-                  width: 20,
-                ),
-                Row(
-                  children: [
-                    Text(
-                      'Profile',
-                      style:
-                          TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      'Page',
-                      style: TextStyle(
-                          fontSize: 28, fontWeight: FontWeight.normal),
-                    ),
-                  ],
-                ),
-              ],
+
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        minimum: const EdgeInsets.only(top:100),
+        child: Column(
+          children: <Widget>[
+
+            CircleAvatar(
+              radius: 50,
+              backgroundImage: AssetImage('assets/img.png'),
+
             ),
-          ),
-        ],
-      ),
-    );
+            Text(
+              "AltrOpps User",
+              style: TextStyle(
+              fontSize: 40.0,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontFamily: "Source Sans Pro",
+
+    ),
+    ),
+            Text(
+              "@altropps_user",
+              style: TextStyle(
+              fontSize: 30,
+              color: Colors.black,
+              letterSpacing: 1.0,
+              fontWeight: FontWeight.bold,
+              fontFamily: "Source Sans Pro",
+
+              ),
+
+        ),
+            SizedBox(
+              height: 20,
+              width: 200,
+              child: Divider(
+              color: Colors.black,
+
+    ),
+    ),
+            InfoCard(text: "History" , icon: Icons.history, onPressed: ()async{}),
+            InfoCard(text: "Saved Opportunities" , icon: Icons.schedule, onPressed: ()async{}),
+            InfoCard(text: "Community" , icon: Icons.group, onPressed: ()async{}),
+            InfoCard(text: "Analysis" , icon: Icons.analytics, onPressed: ()async{}),
+            //InfoCard(text: "Signout" , icon: Icons.signout, onPressed: ()async{})
+
+
+
+    ],
+    ),
+    ));
   }
 }
 
-class ProfileWidget extends StatelessWidget {
-  const ProfileWidget({
-    required Key key,
-  }) : super(key: key);
-
-  get StaggeredGridView => null;
-
-  get StaggeredTile => null;
-
-  @override
-  Widget build(BuildContext context) => ListView(
-        physics: BouncingScrollPhysics(),
-        children: [
-          buildProfile(context),
-          Divider(height: 32),
-          buildPhotos(context),
-        ],
-      );
-
-  Widget buildPhotos(BuildContext context) => Container(
-        padding: EdgeInsets.symmetric(horizontal: 12),
-        child: Column(
-          children: [
-            Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                'PHOTOS',
-                style: TextStyle(
-                  color: Theme.of(context).iconTheme.color,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            SizedBox(height: 12),
-            buildPhotoGrid(),
-          ],
-        ),
-      );
-
-  Widget buildPhotoGrid() => StaggeredGridView.countBuilder(
-        primary: false,
-        shrinkWrap: true,
-        crossAxisCount: 4,
-        mainAxisSpacing: 8,
-        crossAxisSpacing: 8,
-        itemCount: 8,
-        itemBuilder: (BuildContext context, int index) {
-          final urlImage = 'https://source.unsplash.com/random?sig=$index';
-
-          return Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-              image: DecorationImage(
-                image: NetworkImage(urlImage),
-                fit: BoxFit.cover,
-              ),
-            ),
-          );
-        },
-        staggeredTileBuilder: (int index) =>
-            StaggeredTile.count(2, index.isEven ? 2 : 1),
-      );
-
-  Widget buildProfile(BuildContext context) => Column(
-        children: [
-          SizedBox(height: 20),
-          CircleAvatar(
-            radius: 46,
-            backgroundColor: Theme.of(context).iconTheme.color,
-            child: CircleAvatar(
-              radius: 44,
-              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-              child: CircleAvatar(
-                child: Image.asset('assets/user1.png'),
-                backgroundColor: Colors.pink,
-                radius: 40,
-              ),
-            ),
-          ),
-          SizedBox(height: 20),
-          Text(
-            'Jane Doe',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 8),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.location_on),
-              const SizedBox(width: 4),
-              Text('New York, USA'),
-            ],
-          ),
-          SizedBox(height: 16),
-          Text('Photography is the story I fail to put into words'),
-          SizedBox(height: 16),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              buildCounters(context, '36', 'Posts'),
-              buildCounters(context, '3.5K', 'Following'),
-              buildCounters(context, '15K', 'Followers'),
-            ],
-          ),
-        ],
-      );
-
-  Widget buildCounters(context, String firstLine, String secondLine) => Column(
-        children: [
-          Text(
-            firstLine,
-            style: TextStyle(
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 8),
-          Text(secondLine),
-        ],
-      );
-}
