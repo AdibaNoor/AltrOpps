@@ -13,7 +13,7 @@ class LiveOpportunityPage extends StatefulWidget {
 }
 
 class _LiveOpportunityPageState extends State<LiveOpportunityPage> {
-  final ref = FirebaseDatabase.instance.ref('Sheet1');
+  final ref = FirebaseDatabase.instance.ref('Interships');
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;
@@ -61,7 +61,7 @@ class _LiveOpportunityPageState extends State<LiveOpportunityPage> {
                               Container(
                                 alignment:Alignment.center,
                                 child: Text(snapshot
-                                    .child('NAME')
+                                    .child('NAME OF INTERNSHIP')
                                     .value
                                     .toString(),
                                   style: TextStyle(color: Colors.black,fontSize: 15,fontWeight: FontWeight.w800,),textAlign: TextAlign.center,),
