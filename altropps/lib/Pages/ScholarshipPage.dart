@@ -13,7 +13,7 @@ class ScholarshipPage extends StatefulWidget {
 }
 
 class _ScholarshipPageState extends State<ScholarshipPage> {
-  final ref = FirebaseDatabase.instance.ref('Fellowship&Mentorship');
+  final ref = FirebaseDatabase.instance.ref('Scholarship');
   @override
   Widget build(BuildContext context) {
     double w = MediaQuery.of(context).size.width;

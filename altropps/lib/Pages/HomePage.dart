@@ -5,6 +5,7 @@ import 'package:altropps/Pages/OpenSourcePage.dart';
 import 'package:altropps/Pages/PostPage.dart';
 import 'package:altropps/Pages/ProfilePage.dart';
 import 'package:altropps/Pages/ScholarshipPage.dart';
+import 'package:altropps/Pages/drawer.dart';
 import 'package:altropps/util/Card_custom.dart';
 import 'package:altropps/util/Widget/change_theme_button_widget.dart';
 import 'package:flutter/material.dart';
@@ -104,10 +105,15 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        leading: Icon(
-          Icons.dashboard,
-          color: Color(0xFFD58DE0),
-        ),
+        leading: GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => CustomDrawer()));
+                  },
+                  child: Icon(
+                    Icons.dashboard,
+                    color: Color(0xFFD58DE0),
+                  ),
+                ),
         title: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -250,52 +256,52 @@ class _MyHomePageState extends State<MyHomePage> {
           //icons card
         ]),
       ),
-      bottomNavigationBar: GNav(
-        gap: 5,
-        color: Colors.black38,
-        duration: Duration(milliseconds: 100),
-        tabs: [
-          GButton(
-            icon: Icons.home_outlined,
-            textColor: Colors.grey,
-            text: 'Home',
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => MyHomePage()));
-            },
-          ),
-          GButton(
-            icon: Icons.star_border,
-            text: 'Fav',
-            onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => FavPage()));
-            },
-          ),
-          // GButton(
-          //   icon: Icons.add_box_outlined,
-          //   text: 'Post',
-          //   onPressed: () {
-          //     Navigator.push(
-          //         context, MaterialPageRoute(builder: (context) => PostPage()));
-          //   },
-          // ),
-          GButton(
-            icon: Icons.person_outline,
-            text: 'Profile',
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ProfilePage()));
-            },
-          ),
-        ],
-        selectedIndex: _selectedIndex,
-        onTabChange: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
-      ),
+      // bottomNavigationBar: GNav(
+      //   gap: 5,
+      //   color: Colors.black38,
+      //   duration: Duration(milliseconds: 100),
+      //   tabs: [
+      //     GButton(
+      //       icon: Icons.home_outlined,
+      //       textColor: Colors.grey,
+      //       text: 'Home',
+      //       onPressed: () {
+      //         Navigator.push(context,
+      //             MaterialPageRoute(builder: (context) => MyHomePage()));
+      //       },
+      //     ),
+      //     GButton(
+      //       icon: Icons.star_border,
+      //       text: 'Fav',
+      //       onPressed: () {
+      //         Navigator.push(
+      //             context, MaterialPageRoute(builder: (context) => FavPage()));
+      //       },
+      //     ),
+      //     // GButton(
+      //     //   icon: Icons.add_box_outlined,
+      //     //   text: 'Post',
+      //     //   onPressed: () {
+      //     //     Navigator.push(
+      //     //         context, MaterialPageRoute(builder: (context) => PostPage()));
+      //     //   },
+      //     // ),
+      //     GButton(
+      //       icon: Icons.person_outline,
+      //       text: 'Profile',
+      //       onPressed: () {
+      //         Navigator.push(context,
+      //             MaterialPageRoute(builder: (context) => ProfilePage()));
+      //       },
+      //     ),
+      //   ],
+      //   selectedIndex: _selectedIndex,
+      //   onTabChange: (index) {
+      //     setState(() {
+      //       _selectedIndex = index;
+      //     });
+      //   },
+      // ),
     );
   }
 }
