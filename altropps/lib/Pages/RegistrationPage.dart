@@ -136,7 +136,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               //     )),
 
               Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Expanded(child: Container(),),
                     TextButton(child: Text('Forgot password?'), onPressed: () { Navigator.of(context).push(MaterialPageRoute(builder: (context) => ResetScreen())); }, ),
@@ -144,18 +144,6 @@ class _RegistrationPageState extends State<RegistrationPage> {
               ),
 
               SizedBox(height:50),
-
-              // Row(
-              //     mainAxisAlignment: MainAxisAlignment.end,
-              //     children: [
-              //       ElevatedButton(
-              //           onPressed: (){
-              //             auth.signInWithEmailAndPassword(email: emailController.text.trim(), password: passwordController.text.trim());
-              //             Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoginPage()));
-              //           },
-              //           child: Text('Sign Up', style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold, color: Colors.white,),),)
-              //     ]
-              // ),
 
               GestureDetector(
                 onTap: (){
