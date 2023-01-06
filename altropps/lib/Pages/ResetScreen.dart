@@ -100,7 +100,7 @@ class _ResetScreenState extends State<ResetScreen> {
                 //     Text('Forgot password?',style: TextStyle(fontSize: 10, color: Colors.grey[500])),
                 //   ]
                 // ),
-                SizedBox(height:70),
+                SizedBox(height:40),
 
                 Container(
                   margin: const EdgeInsets.only(left: 20, right: 20),
@@ -132,7 +132,7 @@ class _ResetScreenState extends State<ResetScreen> {
                   ),
                 ),
 
-                SizedBox(height: w*0.2),
+                SizedBox(height: 70),
 
 
 
