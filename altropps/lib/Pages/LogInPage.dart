@@ -2,6 +2,7 @@ import 'package:altropps/Pages/RegistrationPage.dart';
 import 'package:flutter/material.dart';
 import 'package:altropps/Pages/HomePage.dart';
 import 'auth_controller.dart';
+import 'ResetScreen.dart';
 
 
 var emailController = TextEditingController();
@@ -124,17 +125,17 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 SizedBox(height: 10,),
-                Container(margin: const EdgeInsets.only(left: 20, right: 20),
-                    width: w,
-                    child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text('Forgot password?', style: TextStyle(
-                              fontSize: 10,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black45)),
-                        ]
-                    )),
+                Container(
+                  margin:const EdgeInsets.only(left:20, right:20),
+                  width: w,
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Expanded(child: Container(),),
+                        TextButton(child: Text('Forgot password?'), onPressed: () { Navigator.of(context).push(MaterialPageRoute(builder: (context) => ResetScreen())); }, ),
+                      ]
+                  ),
+                ),
                 // Row(
                 //   children: [
                 //     Expanded(child: Container(),),
