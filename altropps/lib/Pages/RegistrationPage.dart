@@ -135,13 +135,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               //         ]
               //     )),
 
-              Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    Expanded(child: Container(),),
-                    TextButton(child: Text('Forgot password?'), onPressed: () { Navigator.of(context).push(MaterialPageRoute(builder: (context) => ResetScreen())); }, ),
-                  ]
-              ),
+
 
               SizedBox(height:50),
 
