@@ -45,7 +45,7 @@ class _ResetScreenState extends State<ResetScreen> {
                       borderRadius: BorderRadius.circular(20),
                       boxShadow:[
                         BoxShadow(
-                            blurRadius:10,
+                            blurRadius:5,
                             spreadRadius: 7,
                             offset: Offset(1,1),
                             color: Colors.grey.withOpacity(0.2)
@@ -102,38 +102,36 @@ class _ResetScreenState extends State<ResetScreen> {
                 // ),
                 SizedBox(height:70),
 
-                Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      ElevatedButton(
-                          onPressed: (){
-                            auth.sendPasswordResetEmail(email: emailController.text.trim());
-                            Navigator.of(context).pop();
-                          },
-                          child: Text('Send Request',style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold, color: Colors.white,)))
-                    ]
-                ),
-
-                InkWell(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> MyHomePage()));
-                  },
-                  child: Container(
-                      width: w*0.5,
-                      height: h*0.08,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          image: DecorationImage(
-                              image: AssetImage(
-                                  "assets/Loginbtn.png"
+                Container(
+                  margin: const EdgeInsets.only(left: 20, right: 20),
+                  width: w,
+                  child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        InkWell(
+                            onTap: (){
+                              auth.sendPasswordResetEmail(email: emailController.text.trim());
+                              Navigator.of(context).pop();
+                            },
+                          child: Container(
+                              width: w*0.5,
+                              height: h*0.08,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  image: DecorationImage(
+                                      image: AssetImage(
+                                          "assets/Loginbtn.png"
+                                      )
+                                  )
+                              ),
+                              child: Center(
+                                child:Text('Send Request',style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold, color: Colors.white,),),
                               )
-                          )
-                      ),
-                      child: Center(
-                        child:Text('Send Request',style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold, color: Colors.white,),),
-                      )
+                          ),)
+                      ]
                   ),
                 ),
+
                 SizedBox(height: w*0.2),
 
 
