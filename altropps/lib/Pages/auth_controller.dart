@@ -1,5 +1,6 @@
 import 'package:altropps/Pages/HomePage.dart';
 import 'package:altropps/Pages/LogInPage.dart';
+import 'package:altropps/Pages/drawer.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,7 @@ class AuthController extends GetxController{
       Get.offAll(()=>LoginPage());
     }
     else{
-      Get.offAll(()=>MyHomePage());
+      Get.offAll(()=>CustomDrawer());
     }
   }
 
@@ -77,7 +78,7 @@ class AuthController extends GetxController{
       );
     }
   }
-  void logout(String email, password) async{
+  void logout() async{
     await auth.signOut();
   }
 }

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:altropps/Pages/HomePage.dart';
 import 'auth_controller.dart';
 import 'ResetScreen.dart';
-
+import 'drawer.dart';
 
 var emailController = TextEditingController();
 var passwordController = TextEditingController();
@@ -150,7 +150,7 @@ class _LoginPageState extends State<LoginPage> {
                     AuthController.instance.login(emailController.text.trim(),
                         passwordController.text.trim());
                     Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (context) => MyHomePage()));
+                        MaterialPageRoute(builder: (context) => CustomDrawer()));
                   },
                   child: Container(
                       width: w * 0.5,
