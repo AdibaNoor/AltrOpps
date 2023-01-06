@@ -43,6 +43,7 @@ dependencies:
   url_launcher: ^6.1.7
   get: ^4.6.5
   flutter_linkify: ^5.0.2
+  hidden_drawer_menu: ^3.0.1
 
 
 dev_dependencies:

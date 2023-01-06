@@ -212,6 +212,13 @@
             </list>
           </value>
         </entry>
+        <entry key="hidden_drawer_menu">
+          <value>
+            <list>
+              <option value="C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/hidden_drawer_menu-3.0.1/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="html">
           <value>
             <list>
@@ -494,6 +501,7 @@
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_native_splash-2.2.16/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/get-4.6.5/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/google_nav_bar-5.0.6/lib" />
+      <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/hidden_drawer_menu-3.0.1/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/html-0.15.1/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.2/lib" />
       <root url="file://C:/installers/flutter/.pub-cache/hosted/pub.dartlang.org/image-3.3.0/lib" />

@@ -1,6 +1,7 @@
 import 'package:altropps/Pages/HomePage.dart';
 import 'package:altropps/Pages/LogInPage.dart';
 import 'package:altropps/Pages/RegistrationPage.dart';
+import 'package:altropps/Pages/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 
@@ -11,9 +12,7 @@ class OnBoardingPage extends StatelessWidget {
           pages: [
             PageViewModel(
               title: 'Grab The opportunity before it lapses!!',
-
               body: 'Mentorship,Fellowship,Live Opportunities, Open source Projects all available at your fingertip.',
-
               decoration: getPageDecoration(),
             ),
             PageViewModel(
@@ -103,7 +102,7 @@ class OnBoardingPage extends StatelessWidget {
       );
 
   void goToHome(context) => Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => MyHomePage()),
+        MaterialPageRoute(builder: (_) => CustomDrawer()),
       );
 
   Widget buildImage(String path) =>
@@ -113,7 +112,7 @@ class OnBoardingPage extends StatelessWidget {
         color: Color(0xFFBDBDBD),
         activeColor: Color(0xFFD58DE0),
         size: Size(10, 10),
-        activeSize: Size(25, 10),
+        activeSize: Size(20, 10),
         activeShape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
         ),
