@@ -10,6 +10,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
 
+
 class AuthController extends GetxController{
   //AuthController.instance..
   static AuthController instance = Get.find();
