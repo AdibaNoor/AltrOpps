@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "E:\\projects\\Minor project\\AltrOpps\\altropps\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-night-v8\\values-night-v8.xml",
+            "map": [
+                {
+                    "source": "E:\\projects\\Minor project\\AltrOpps\\altropps\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "from": {
+                        "startLines": "3,16",
+                        "startColumns": "4,4",
+                        "startOffsets": "172,930",
+                        "endLines": "9,18",
+                        "endColumns": "12,12",
+                        "endOffsets": "583,1094"
+                    },
+                    "to": {
+                        "startLines": "2,9",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,470",
+                        "endLines": "8,11",
+                        "endColumns": "12,12",
+                        "endOffsets": "465,634"
+                    }
+                }
+            ]
+        }
+    ]
+}

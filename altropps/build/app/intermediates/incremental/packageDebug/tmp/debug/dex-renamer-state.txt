@@ -1,0 +1,4 @@
+#Fri Jan 06 17:42:34 IST 2023
+base.0=E\:\\projects\\Minor project\\AltrOpps\\altropps\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
